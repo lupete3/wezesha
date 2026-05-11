@@ -13,11 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Admin Wezesha',
-            'email' => 'admin@wezesha-foundation.org',
-            'password' => bcrypt('password'),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'admin@wezesha-foundation.org'],
+            [
+                'name' => 'Admin Wezesha',
+                'password' => bcrypt('password'),
+            ]
+        );
 
         $this->call([
             FlexBizSeeder::class,
