@@ -33,7 +33,7 @@ new class extends Component {
         $this->category    = $project->category ?? 'services';
         $this->client      = $project->client ?? '';
         $this->date        = $project->date ?? '';
-        $this->description = $project->description;
+        $this->description = $project->description ?? '';
         $this->content     = $project->content ?? '';
         $this->url         = $project->url ?? '';
     }
