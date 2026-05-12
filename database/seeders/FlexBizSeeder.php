@@ -28,14 +28,23 @@ class FlexBizSeeder extends Seeder
     public function run(): void
     {
         // 1. Sliders (Hero)
+        Slider::query()->delete();
         Slider::create([
             'title' => 'WEZESHA FOUNDATION',
             'subtitle' => 'TRANSFORMING THE FUTURE OF DRC',
+            'description' => 'Promouvoir une éducation de qualité et le bien-être social des orphelins et familles défavorisées en RDC.',
             'image' => 'flexbiz/assets/img/illustration/illustration-8.webp',
+            'secondary_image' => 'flexbiz/assets/img/illustration/illustration-15.webp',
+            'floating_badge' => '10+ Ans d\'Impact',
             'button1_text' => 'En savoir plus',
             'button1_url' => '#about',
             'button2_text' => 'Faire un don',
             'button2_url' => '#',
+            'mini_stats' => [
+                ['icon' => 'bi bi-mortarboard', 'label' => 'Éducation'],
+                ['icon' => 'bi bi-heart', 'label' => 'Humanitaire'],
+                ['icon' => 'bi bi-shield-check', 'label' => 'Impact']
+            ],
             'order' => 1,
         ]);
 
