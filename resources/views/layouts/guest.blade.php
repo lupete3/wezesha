@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>@yield('title', 'WEZESHA FOUNDATION - Transformer l\'avenir de la RDC')</title>
+    <title>@yield('title', ($settings['site_name']->value ?? 'WEZESHA FOUNDATION') . ' - ' . ($settings['slogan']->value ?? 'Transformer l\'avenir de la RDC'))</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="WEZESHA FOUNDATION, ONG, Éducation, Développement durable, Humanitaire, RDC" name="keywords">
     <meta content="WEZESHA FOUNDATION est une organisation dédiée à la promotion de l'éducation et du bien-être social en République Démocratique du Congo." name="description">

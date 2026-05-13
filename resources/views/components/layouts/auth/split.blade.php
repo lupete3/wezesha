@@ -3,11 +3,14 @@
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
       <div class="w-100 d-flex justify-content-center">
-        <div>
-          <!-- Logo -->
-          <a href="{{url('/')}}" class="app-brand auth-cover-brand gap-2"><x-app-logo /></a>
-          <!-- /Logo -->
-          <img src="{{asset('assets/img/illustrations/boy-with-rocket-light.png')}}" class="img-fluid" alt="Login image" width="700"/>
+        <div class="text-center w-100">
+          @if(isset($settings['logo']) && $settings['logo']->value)
+            <img src="{{ asset('storage/' . $settings['logo']->value) }}" class="img-fluid mb-4" alt="Logo" style="max-width: 450px;">
+          @else
+            <img src="{{ asset('flexbiz/assets/img/favicon.png') }}" class="img-fluid mb-4" alt="Logo" style="max-width: 200px;">
+          @endif
+          <h2 class="fw-bold text-primary">{{ $settings['site_name']->value ?? 'WEZESHA FOUNDATION' }}</h2>
+          <p class="text-muted">{{ $settings['slogan']->value ?? '' }}</p>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@
 ])
 
 
-<title>@yield('title') | {{ config('variables.templateName', 'WEZESHA FOUNDATION') }} - {{ config('variables.templateSuffix', "ONG de Développement & Humanitaire") }}</title>
+<title>@yield('title') | {{ $settings['site_name']->value ?? config('variables.templateName', 'WEZESHA FOUNDATION') }} - {{ $settings['slogan']->value ?? config('variables.templateSuffix', "ONG de Développement & Humanitaire") }}</title>
 
 
 <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
@@ -20,7 +20,7 @@
 <meta property="og:url" content="{{ url('/') }}" />
 <meta property="og:image" content="{{ config('variables.ogImage', '') }}" />
 <meta property="og:description" content="{{ config('variables.templateDescription', '') }}" />
-<meta property="og:site_name" content="{{ config('variables.templateName', 'WEZESHA FOUNDATION') }}" />
+<meta property="og:site_name" content="{{ $settings['site_name']->value ?? config('variables.templateName', 'WEZESHA FOUNDATION') }}" />
 <link rel="canonical" href="{{ url('/') }}">
 <!-- Favicon -->
 <link href="{{ asset('flexbiz/assets/img/favicon.png') }}" rel="icon">
