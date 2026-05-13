@@ -178,7 +178,12 @@
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
-        new Swiper(swiperElement, config);
+        const swiper = new Swiper(swiperElement, config);
+        swiper.on('slideChangeTransitionStart', function() {
+          if (typeof aosInit === 'function') {
+            aosInit();
+          }
+        });
       }
     });
   }
