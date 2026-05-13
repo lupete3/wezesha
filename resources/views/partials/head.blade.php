@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="{{ config('variables.templateName', 'WEZESHA FOUNDATION') }}" />
 <link rel="canonical" href="{{ url('/') }}">
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+<link href="{{ asset('flexbiz/assets/img/favicon.png') }}" rel="icon">
 
 
 <!-- Include Styles -->
