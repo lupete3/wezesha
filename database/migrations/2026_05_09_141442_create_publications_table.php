@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('category'); // guides, ohada, rapports
+            $table->string('category'); // brochures, etudes, rapports
             $table->string('file_path')->nullable();
             $table->string('thumbnail')->nullable();
             $table->timestamps();
