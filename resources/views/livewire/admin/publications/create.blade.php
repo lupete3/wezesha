@@ -9,7 +9,7 @@ new class extends Component {
 
     public $title = '';
     public $description = '';
-    public $category = 'guides';
+    public $category = 'brochures';
     public $file;
     public $thumbnail;
 
@@ -64,8 +64,8 @@ new class extends Component {
                     <div class="mb-3 col-md-6">
                         <label class="form-label" for="category">Catégorie</label>
                         <select class="form-select" id="category" wire:model="category">
-                            <option value="guides">Guides Fiscaux</option>
-                            <option value="ohada">Notes OHADA</option>
+                            <option value="brochures">Brochures & Dépliants</option>
+                            <option value="etudes">Études & Recherches</option>
                             <option value="rapports">Rapports Annuels</option>
                         </select>
                         @error('category') <div class="text-danger">{{ $message }}</div> @enderror
