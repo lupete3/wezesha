@@ -8,6 +8,8 @@ use App\Models\GalleryPhoto;
 new #[Layout('layouts.guest')] class extends Component {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     public string $albumFilter = '';
 
     public function updatingAlbumFilter(): void
@@ -53,12 +55,14 @@ new #[Layout('layouts.guest')] class extends Component {
         background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     .gallery-page-hero h1 {
+        color: #fff !important;
         font-size: 2.5rem;
         font-weight: 800;
         margin-bottom: 12px;
         text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .gallery-page-hero p {
+        color: rgba(255,255,255,0.92) !important;
         font-size: 1.05rem;
         opacity: 0.9;
         max-width: 550px;
@@ -73,7 +77,11 @@ new #[Layout('layouts.guest')] class extends Component {
         font-size: 0.875rem;
         opacity: 0.8;
     }
-    .breadcrumb-gallery a { color: #fff; text-decoration: none; }
+    .breadcrumb-gallery,
+    .breadcrumb-gallery span,
+    .breadcrumb-gallery i,
+    .breadcrumb-gallery a { color: #fff !important; }
+    .breadcrumb-gallery a { text-decoration: none; }
     .breadcrumb-gallery a:hover { opacity: 0.7; }
 
     /* ===== Filtres Albums ===== */
@@ -201,7 +209,35 @@ new #[Layout('layouts.guest')] class extends Component {
 
     /* ===== Pagination ===== */
     .gallery-pagination { margin-top: 40px; }
-    .gallery-pagination .pagination { justify-content: center; }
+    .gallery-pagination .pagination {
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 0;
+    }
+    .gallery-pagination .page-link {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 12px;
+        border-radius: 999px !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.92rem;
+        line-height: 1;
+    }
+    .gallery-pagination .page-item.active .page-link {
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+        color: #fff;
+    }
+    .gallery-pagination svg {
+        width: 16px;
+        height: 16px;
+    }
+    .gallery-pagination nav > div:first-child {
+        display: none;
+    }
     </style>
 
     {{-- Hero --}}
