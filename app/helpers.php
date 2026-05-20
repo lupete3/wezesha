@@ -19,11 +19,18 @@ if (!function_exists('media_url')) {
             return $path;
         }
 
+        $path = ltrim($path, '/');
+
+        if (str_starts_with($path, 'storage/')) {
+            return asset($path);
+        }
+
         // Public directory assets (FlexBiz template files, etc.)
         if (
             str_starts_with($path, 'flexbiz/') ||
             str_starts_with($path, 'assets/') ||
-            str_starts_with($path, 'images/')
+            str_starts_with($path, 'images/') ||
+            str_starts_with($path, 'template/')
         ) {
             return asset($path);
         }

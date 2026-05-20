@@ -90,7 +90,7 @@ new class extends Component {
                     <div class="mb-3 col-md-6">
                         <label class="form-label">Photo actuelle</label>
                         <div class="mb-2">
-                            <img src="{{ asset('storage/' . $galleryPhoto->image_path) }}"
+                            <img src="{{ media_url($galleryPhoto->image_path) }}"
                                  alt="{{ $galleryPhoto->title }}"
                                  class="rounded" style="max-height:140px; object-fit:cover;">
                         </div>

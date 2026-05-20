@@ -142,12 +142,12 @@ new class extends Component {
         <div class="gp-grid">
             @foreach($photos as $photo)
             <div class="gp-item">
-                <a href="{{ asset('storage/' . $photo->image_path) }}"
+                <a href="{{ media_url($photo->image_path) }}"
                    class="glightbox"
                    data-gallery="gallery-preview"
                    data-title="{{ $photo->title }}"
                    data-description="{{ $photo->description }}">
-                    <img src="{{ asset('storage/' . $photo->image_path) }}"
+                    <img src="{{ media_url($photo->image_path) }}"
                          alt="{{ $photo->title }}"
                          loading="lazy">
                     <div class="gp-zoom-icon">

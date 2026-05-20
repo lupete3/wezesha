@@ -54,7 +54,7 @@ new class extends Component {
                     @forelse ($photos as $photo)
                         <tr>
                             <td>
-                                <img src="{{ asset('storage/' . $photo->image_path) }}"
+                                <img src="{{ media_url($photo->image_path) }}"
                                      alt="{{ $photo->title }}"
                                      class="rounded"
                                      style="width:60px; height:45px; object-fit:cover;">

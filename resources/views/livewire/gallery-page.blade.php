@@ -2,9 +2,10 @@
 
 use Livewire\Volt\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\Layout;
 use App\Models\GalleryPhoto;
 
-new class extends Component {
+new #[Layout('layouts.guest')] class extends Component {
     use WithPagination;
 
     public string $albumFilter = '';
@@ -34,7 +35,7 @@ new class extends Component {
     }
 }; ?>
 
-<x-guest-layout>
+<div>
     <style>
     /* ===== Page Galerie ===== */
     .gallery-page-hero {
@@ -242,12 +243,12 @@ new class extends Component {
             <div class="gallery-grid" wire:key="gallery-grid-{{ $albumFilter }}-{{ $photos->currentPage() }}">
                 @foreach($photos as $photo)
                 <div class="gallery-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 40 }}">
-                    <a href="{{ asset('storage/' . $photo->image_path) }}"
+                    <a href="{{ media_url($photo->image_path) }}"
                        class="glightbox"
                        data-gallery="main-gallery"
                        data-title="{{ $photo->title }}"
                        data-description="{{ $photo->description }}">
-                        <img src="{{ asset('storage/' . $photo->image_path) }}"
+                        <img src="{{ media_url($photo->image_path) }}"
                              alt="{{ $photo->title }}"
                              loading="lazy">
                         <div class="gallery-card-zoom">
@@ -297,4 +298,4 @@ new class extends Component {
         }, 300);
     });
     </script>
-</x-guest-layout>
+</div>
