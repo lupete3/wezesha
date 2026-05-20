@@ -8,6 +8,7 @@
     <livewire:call-to-action />
     <livewire:show-partners />
     <livewire:show-achievements />
+    <livewire:show-gallery />
     <livewire:show-posts />
     <livewire:show-testimonials />
     <livewire:show-team-members />

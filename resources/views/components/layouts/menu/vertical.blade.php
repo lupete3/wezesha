@@ -96,6 +96,12 @@
             <div class="text-truncate">Carrières</div>
         </a>
     </li>
+    <li class="menu-item {{ request()->routeIs('admin.gallery-photos.*') ? 'active' : '' }}">
+        <a class="menu-link" href="{{ route('admin.gallery-photos.index') }}" wire:navigate>
+            <i class="menu-icon tf-icons bx bx-photo-album"></i>
+            <div class="text-truncate">Galerie Photos</div>
+        </a>
+    </li>
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Pages</span>
     </li>

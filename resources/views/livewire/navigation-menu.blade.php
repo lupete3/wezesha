@@ -120,6 +120,7 @@
                     <li><a href="{{ route('publications', ['category' => 'newsletter']) }}">Newsletters</a></li>
                   </ul>
                 </li>
+                <li><a href="{{ route('gallery') }}"><i class="bi bi-images me-1"></i>Galerie Photos</a></li>
                 <li><a href="{{ route('careers') }}">Carrières</a></li>
                 <li><a href="{{ url('/') }}#faq">FAQ</a></li>
               </ul>

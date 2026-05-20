@@ -16,6 +16,7 @@ Route::get('/blog', \App\Livewire\PostsPage::class)->name('blog');
 Route::get('/contact', \App\Livewire\ContactPage::class)->name('contact');
 Route::get('/publications/{category?}', \App\Livewire\PublicationsPage::class)->name('publications');
 Route::get('/careers', \App\Livewire\CareersPage::class)->name('careers');
+Volt::route('/galerie', 'gallery-page')->name('gallery');
 
 
 // Detail Pages
@@ -116,6 +117,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Volt::route('job-openings', 'admin.job-openings.index')->name('job-openings.index');
     Volt::route('job-openings/create', 'admin.job-openings.create')->name('job-openings.create');
     Volt::route('job-openings/{jobOpening}/edit', 'admin.job-openings.edit')->name('job-openings.edit');
+
+    // Gallery Photos
+    Volt::route('gallery-photos', 'admin.gallery-photos.index')->name('gallery-photos.index');
+    Volt::route('gallery-photos/create', 'admin.gallery-photos.create')->name('gallery-photos.create');
+    Volt::route('gallery-photos/{galleryPhoto}/edit', 'admin.gallery-photos.edit')->name('gallery-photos.edit');
 
     // Settings
     Route::get('settings', \App\Livewire\SettingsManager::class)->name('settings');
